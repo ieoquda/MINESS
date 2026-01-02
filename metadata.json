@@ -1,0 +1,7 @@
+{
+  "name": "Copy of AstroMines - Premium Betting Experience",
+  "description": "A high-performance, casino-style Mines game featuring dynamic multipliers, real-time betting in NPR, and a professional dark-themed UI.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

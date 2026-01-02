@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Gems Mines - Premium Betting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #020617;
+            color: #ffffff;
+            overflow: hidden; /* Strict no-scroll */
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Enhanced Blast Animation */
+        .blast-effect {
+            animation: intense-blast 0.6s cubic-bezier(0.17, 0.89, 0.32, 1.49) forwards;
+            position: relative;
+            z-index: 20;
+        }
+        @keyframes intense-blast {
+            0% { transform: scale(0.2); opacity: 0; filter: brightness(10) blur(10px); }
+            30% { transform: scale(1.6); opacity: 1; filter: brightness(3) blur(0px); }
+            100% { transform: scale(1); opacity: 1; filter: brightness(1); }
+        }
+
+        /* Debris Particles */
+        .debris {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #ef4444;
+            border-radius: 2px;
+            pointer-events: none;
+            animation: debris-fly 0.7s ease-out forwards;
+        }
+        @keyframes debris-fly {
+            0% { transform: translate(0, 0) scale(1.5); opacity: 1; filter: brightness(2); }
+            100% { transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(360deg) scale(0); opacity: 0; }
+        }
+
+        /* Premium Diamond Glow */
+        .diamond-glow {
+            filter: drop-shadow(0 0 15px rgba(34, 211, 238, 0.9));
+            animation: diamond-pulse 1.5s infinite ease-in-out;
+        }
+        @keyframes diamond-pulse {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(34, 211, 238, 0.7)); }
+            50% { transform: scale(1.1); filter: drop-shadow(0 0 20px rgba(34, 211, 238, 1)); }
+        }
+
+        /* Safe Tile Pop */
+        .safe-pop {
+            animation: safe-pop-anim 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+        @keyframes safe-pop-anim {
+            0% { transform: scale(0.4); opacity: 0; filter: brightness(3); }
+            70% { transform: scale(1.1); opacity: 1; filter: brightness(1.5); }
+            100% { transform: scale(1); opacity: 1; filter: brightness(1); }
+        }
+
+        /* Screen Shake */
+        .screen-shake {
+            animation: screen-shake-anim 0.4s cubic-bezier(.36,.07,.19,.97) both;
+        }
+        @keyframes screen-shake-anim {
+            10%, 90% { transform: translate3d(-2px, 0, 0); }
+            20%, 80% { transform: translate3d(3px, 0, 0); }
+            30%, 50%, 70% { transform: translate3d(-6px, 0, 0); }
+            40%, 60% { transform: translate3d(6px, 0, 0); }
+        }
+
+        .grid-frame {
+            background: radial-gradient(circle at center, #0f172a 0%, #020617 100%);
+            border: 2px solid #1e3a8a;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9), inset 0 0 30px rgba(30, 58, 138, 0.2);
+            position: relative;
+        }
+
+        .premium-btn {
+            background: linear-gradient(180deg, #3b82f6 0%, #1d4ed8 100%);
+            box-shadow: 0 4px 0 #1e3a8a, 0 8px 15px rgba(37, 99, 235, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.1s;
+        }
+        .premium-btn:active:not(:disabled) {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 #1e3a8a, 0 4px 8px rgba(37, 99, 235, 0.2);
+        }
+        .premium-btn:disabled {
+            background: #1e293b;
+            box-shadow: none;
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .cashout-btn {
+            background: linear-gradient(180deg, #10b981 0%, #059669 100%);
+            box-shadow: 0 4px 0 #064e3b, 0 8px 15px rgba(16, 185, 129, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .cashout-btn:active:not(:disabled) {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 #064e3b, 0 4px 8px rgba(16, 185, 129, 0.2);
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        
+        /* Modernized Input Styling */
+        .bet-input-field {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: white;
+            font-weight: 800;
+            width: 100%;
+            font-size: 0.875rem;
+        }
+        .bet-input-field:focus {
+            box-shadow: none;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react/": "https://esm.sh/react@^19.2.3/"
+  }
+}
+</script>
+</head>
+<body>
+    <div id="root" class="h-full w-full"></div>
+</body>
+</html>
